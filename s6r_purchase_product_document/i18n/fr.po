@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s6r_purchase_product_document
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-20 11:59+0000\n"
+"PO-Revision-Date: 2025-06-20 11:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.product_document_kanban
+msgid "<span>Purchase visibility</span>"
+msgstr "<span>Visibilité achat</span>"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,help:s6r_purchase_product_document.field_product_document__attached_on_purchase
+msgid ""
+"Allows you to share the document with your vendor within a purchase order.\n"
+"Leave it empty if you don't want to share this document with the vendor.\n"
+"Inside: The document will be included in the pdf after the RFQ or purchase \n"
+"order.\n"
+msgstr ""
+"Vous permet de partager le document avec votre fournisseur dans le cadre d'un bon de commande.\n"
+"Laissez ce champ vide si vous ne souhaitez pas partager ce document avec le fournisseur.\n"
+"À l'intérieur : Le document sera inclus dans le PDF après la demande de prix ou bon de commande.\n"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_product_document__attached_on_purchase
+msgid "Attached On Purchase"
+msgstr "Visible sur les achats"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields.selection,name:s6r_purchase_product_document.selection__product_document__attached_on_purchase__inside
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.product_document_search
+msgid "Inside"
+msgstr "À l'intérieur"
+
+#. module: s6r_purchase_product_document
+#. odoo-python
+#: code:addons/s6r-purchase/s6r_purchase_product_document/utils.py:0
+#: code:addons/s6r_purchase_product_document/utils.py:0
+#, python-format
+msgid ""
+"It seems that we're not able to process this pdf inside a purchase order. It"
+" is either encrypted, or encoded in a format we do not support."
+msgstr ""
+"Il semble que ce pdf ne puisse pas être inclus dans un bon de commande. "
+"Celui-ci est soit crypté, soit codé dans un format non pris en charge."
+
+#. module: s6r_purchase_product_document
+#. odoo-python
+#: code:addons/s6r-purchase/s6r_purchase_product_document/models/product_document.py:0
+#: code:addons/s6r_purchase_product_document/models/product_document.py:0
+#, python-format
+msgid "Only PDF documents can be attached inside a purchase."
+msgstr "Seuls les documents PDF peuvent être joints à un bon de commande."
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_product_document
+msgid "Product Document"
+msgstr "Document du produit"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.product_document_form
+msgid "Purchase"
+msgstr "Achats"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_ir_actions_report
+msgid "Report Action"
+msgstr "Action de rapport"
+
+#. module: s6r_purchase_product_document
+#. odoo-python
+#: code:addons/s6r-purchase/s6r_purchase_product_document/models/product_document.py:0
+#: code:addons/s6r_purchase_product_document/models/product_document.py:0
+#, python-format
+msgid ""
+"When attached inside a purchase, the document must be a file, not a URL."
+msgstr ""
+"Le document joint à un bon de commande doit être un fichier et non une URL."
