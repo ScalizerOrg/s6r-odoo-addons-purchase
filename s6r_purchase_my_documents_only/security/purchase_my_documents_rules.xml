@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Purchase Orders -->
+    <record id="rule_purchase_order_my_docs" model="ir.rule">
+        <field name="name">Purchases: My Orders</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('user_id', '=',
+            False)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+    <record id="rule_purchase_order_line_my_docs" model="ir.rule">
+        <field name="name">Purchases: My Order Lines</field>
+        <field name="model_id" ref="purchase.model_purchase_order_line"/>
+        <field name="domain_force">['|', ('order_id.user_id', '=', user.id),
+            ('order_id.user_id', '=', False)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <!-- Purchase Agreements / Requisitions -->
+    <record id="rule_purchase_requisition_my_docs" model="ir.rule">
+        <field name="name">Purchases: My Agreements</field>
+        <field name="model_id" ref="purchase_requisition.model_purchase_requisition"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('user_id', '=',
+            False)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="rule_purchase_requisition_line_my_docs" model="ir.rule">
+        <field name="name">Purchases: My Agreement Lines</field>
+        <field name="model_id"
+               ref="purchase_requisition.model_purchase_requisition_line"/>
+        <field name="domain_force">['|', ('requisition_id.user_id', '=', user.id),
+            ('requisition_id.user_id', '=', False)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <!-- Receipts -->
+    <record id="rule_stock_picking_my_docs" model="ir.rule">
+        <field name="name">Stock: My Receipts</field>
+        <field name="model_id" ref="stock.model_stock_picking"/>
+        <field name="domain_force">['|', ('purchase_id.user_id', '=', user.id),
+            ('purchase_id.user_id', '=', False)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <!-- Optional but recommended support rules on stock lines -->
+    <record id="rule_stock_move_my_docs" model="ir.rule">
+        <field name="name">Stock: My Receipt Moves</field>
+        <field name="model_id" ref="stock.model_stock_move"/>
+        <field name="domain_force">['|', ('picking_id.purchase_id.user_id', '=',
+            user.id), ('picking_id.purchase_id.user_id', '=', False)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record id="rule_stock_move_line_my_docs" model="ir.rule">
+        <field name="name">Stock: My Receipt Move Lines</field>
+        <field name="model_id" ref="stock.model_stock_move_line"/>
+        <field name="domain_force">['|', ('picking_id.purchase_id.user_id', '=',
+            user.id), ('picking_id.purchase_id.user_id', '=', False)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <!-- Vendor Bills -->
+    <record id="rule_account_move_purchase_my_docs" model="ir.rule">
+        <field name="name">Bills: My Documents</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="domain_force">
+            ['&amp;',
+            ('move_type', 'in', ('in_invoice', 'in_refund')),
+            '|',
+            ('invoice_user_id', '=', user.id),
+            ('invoice_line_ids.purchase_line_id.order_id.user_id', '=', user.id)
+            ]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="rule_account_move_line_purchase_my_docs" model="ir.rule">
+        <field name="name">Bills: My Document Lines</field>
+        <field name="model_id" ref="account.model_account_move_line"/>
+        <field name="domain_force">
+            ['&amp;',
+            ('move_id.move_type', 'in', ('in_invoice', 'in_refund')),
+            '|',
+            ('move_id.invoice_user_id', '=', user.id),
+            ('move_id.invoice_line_ids.purchase_line_id.order_id.user_id', '=',
+            user.id)
+            ]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <!-- Send wizard - single -->
+    <record id="rule_account_move_send_wizard_purchase_my_docs" model="ir.rule">
+        <field name="name">Send Wizard: Single Bill</field>
+        <field name="model_id" search="[('model', '=', 'account.move.send.wizard')]"/>
+        <field name="domain_force">
+            ['&amp;',
+            ('move_id.move_type', 'in', ('in_invoice', 'in_refund')),
+            '|',
+            ('move_id.invoice_user_id', '=', user.id),
+            ('move_id.purchase_id.user_id', '=', user.id)
+            ]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <!-- Send wizard - batch -->
+    <record id="rule_account_move_send_batch_wizard_purchase_my_docs" model="ir.rule">
+        <field name="name">Send Wizard: Batch Bills</field>
+        <field name="model_id"
+               search="[('model', '=', 'account.move.send.batch.wizard')]"/>
+        <field name="domain_force">
+            ['&amp;',
+            ('move_ids.move_type', 'in', ('in_invoice', 'in_refund')),
+            '|',
+            ('move_ids.invoice_user_id', '=', user.id),
+            ('move_ids.purchase_id.user_id', '=', user.id)
+            ]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+</odoo>
