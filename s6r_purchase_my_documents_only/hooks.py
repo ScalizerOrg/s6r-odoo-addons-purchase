@@ -14,11 +14,15 @@ def post_init_hook(env):
         return
 
     DashboardGroup = env["spreadsheet.dashboard.group"].sudo()
+    Lang = env["res.lang"].sudo()
 
     dashboard_group_id = DashboardGroup.create({"name": "Purchase"})
-    dashboard_group_id.with_context(lang="fr_FR").write({
-        "name": "Achat",
-    })
+
+    fr_lang = Lang.search([("code", "=", "fr_FR")], limit=1)
+    if fr_lang:
+        dashboard_group_id.with_context(lang="fr_FR").write({
+            "name": "Achat",
+        })
 
     dashboard_id = env.ref(
         "spreadsheet_dashboard_purchase_stock.spreadsheet_dashboard_purchase").sudo()
