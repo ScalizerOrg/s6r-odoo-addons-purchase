@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_purchase_my_documents_only" model="res.groups">
+        <field name="name">User: My Documents Only</field>
+        <field name="sequence">1</field>
+        <field name="privilege_id"
+               ref="purchase.res_groups_privilege_purchase"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+
+
+        <field name="comment">he user will have access to his own data in the purchase
+            application.
+        </field>
+    </record>
+</odoo>

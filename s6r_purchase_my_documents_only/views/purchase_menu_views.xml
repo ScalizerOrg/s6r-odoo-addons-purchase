@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+    <!-- Root Purchase app -->
+    <record id="purchase.menu_purchase_root" model="ir.ui.menu">
+        <field name="group_ids"
+               eval="[Command.link(ref('s6r_purchase_my_documents_only.group_purchase_my_documents_only'))]"
+        />
+    </record>
+</odoo>
