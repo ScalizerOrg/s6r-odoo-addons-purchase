@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_inherit_amendment" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.amendment</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[last()]" position="after">
+                <button
+                    name="action_create_amendment"
+                    type="object"
+                    string="Create Amendment"
+                    invisible="state != 'purchase' or amendment_of_id"
+                />
+            </xpath>
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button
+                    name="action_view_amendments"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-file-text-o"
+                    invisible="amendment_count == 0"
+                >
+                    <field
+                        name="amendment_count"
+                        widget="statinfo"
+                        string="Amendments"
+                    />
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='partner_ref']" position="after">
+                <field name="amendment_of_id" invisible="not amendment_of_id" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
