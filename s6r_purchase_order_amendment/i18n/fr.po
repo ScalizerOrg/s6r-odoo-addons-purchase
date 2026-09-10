@@ -1,0 +1,85 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s6r_purchase_order_amendment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-10 14:18+0000\n"
+"PO-Revision-Date: 2026-09-10 14:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s6r_purchase_order_amendment
+#. odoo-python
+#: code:addons/s6r-odoo-addons-purchase/s6r_purchase_order_amendment/models/purchase_order.py:0
+#: code:addons/s6r_purchase_order_amendment/models/purchase_order.py:0
+msgid "A purchase order cannot be an amendment of itself."
+msgstr "Une commande fournisseur ne peut pas être un avenant d'elle-même."
+
+#. module: s6r_purchase_order_amendment
+#: model:ir.model.fields,field_description:s6r_purchase_order_amendment.field_purchase_order__amendment_count
+msgid "Amendment Count"
+msgstr "Nombre d'avenants"
+
+#. module: s6r_purchase_order_amendment
+#: model:ir.model.fields,field_description:s6r_purchase_order_amendment.field_purchase_order__amendment_of_id
+msgid "Amendment Of"
+msgstr "Avenant de"
+
+#. module: s6r_purchase_order_amendment
+#. odoo-python
+#: code:addons/s6r-odoo-addons-purchase/s6r_purchase_order_amendment/models/purchase_order.py:0
+#: code:addons/s6r_purchase_order_amendment/models/purchase_order.py:0
+#: model:ir.model.fields,field_description:s6r_purchase_order_amendment.field_purchase_order__amendment_ids
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_order_amendment.purchase_order_form_inherit_amendment
+msgid "Amendments"
+msgstr "Avenants"
+
+#. module: s6r_purchase_order_amendment
+#. odoo-python
+#: code:addons/s6r-odoo-addons-purchase/s6r_purchase_order_amendment/models/purchase_order.py:0
+#: code:addons/s6r_purchase_order_amendment/models/purchase_order.py:0
+msgid ""
+"An amendment can only be created from a confirmed purchase order that is not"
+" itself an amendment."
+msgstr ""
+"Un avenant ne peut être créé qu'à partir d'une commande fournisseur "
+"confirmée qui n'est pas elle-même un avenant."
+
+#. module: s6r_purchase_order_amendment
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_order_amendment.purchase_order_form_inherit_amendment
+msgid "Create Amendment"
+msgstr "Créer un avenant"
+
+#. module: s6r_purchase_order_amendment
+#: model:ir.model.fields,field_description:s6r_purchase_order_amendment.field_purchase_order__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: s6r_purchase_order_amendment
+#: model:ir.model.fields,field_description:s6r_purchase_order_amendment.field_purchase_order__id
+msgid "ID"
+msgstr ""
+
+#. module: s6r_purchase_order_amendment
+#: model:ir.model.fields,help:s6r_purchase_order_amendment.field_purchase_order__amendment_of_id
+msgid "Origin purchase order this order is an amendment of."
+msgstr "Commande fournisseur d'origine dont cette commande est un avenant."
+
+#. module: s6r_purchase_order_amendment
+#: model:ir.model,name:s6r_purchase_order_amendment.model_purchase_order
+msgid "Purchase Order"
+msgstr "Bon de commande fournisseur"
+
+#. module: s6r_purchase_order_amendment
+#. odoo-python
+#: code:addons/s6r-odoo-addons-purchase/s6r_purchase_order_amendment/models/purchase_order.py:0
+#: code:addons/s6r_purchase_order_amendment/models/purchase_order.py:0
+msgid "amendment_of_id"
+msgstr ""
