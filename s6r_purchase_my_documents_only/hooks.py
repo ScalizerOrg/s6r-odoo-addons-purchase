@@ -13,6 +13,17 @@ def post_init_hook(env):
     if not group:
         return
 
+    if "spreadsheet.dashboard.group" not in env:
+        return
+
+    dashboard_id = env.ref(
+        "spreadsheet_dashboard_purchase_stock.spreadsheet_dashboard_purchase",
+        raise_if_not_found=False,
+    )
+    if not dashboard_id:
+        return
+    dashboard_id = dashboard_id.sudo()
+
     DashboardGroup = env["spreadsheet.dashboard.group"].sudo()
     Lang = env["res.lang"].sudo()
 
@@ -23,9 +34,6 @@ def post_init_hook(env):
         dashboard_group_id.with_context(lang="fr_FR").write({
             "name": "Achat",
         })
-
-    dashboard_id = env.ref(
-        "spreadsheet_dashboard_purchase_stock.spreadsheet_dashboard_purchase").sudo()
 
     dashboard_id.write({
         "dashboard_group_id": dashboard_group_id.id,

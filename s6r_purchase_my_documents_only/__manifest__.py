@@ -11,7 +11,6 @@
     "depends": [
         "account",
         "purchase_requisition",
-        "spreadsheet_dashboard_purchase_stock",
     ],
     "data": [
         "security/purchase_my_documents_groups.xml",
