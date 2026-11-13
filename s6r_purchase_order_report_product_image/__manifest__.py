@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0.html).
 {
     "name": "Scalizer Purchase Order Report Product Image",
-    "version": "19.0.0.0.0",
+    "version": "19.0.0.0.1",
     "author": "Scalizer",
     "website": "https://www.scalizer.fr",
     "summary": "Show product images on Purchase documents",
