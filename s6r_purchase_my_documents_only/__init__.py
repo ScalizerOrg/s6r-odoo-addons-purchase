@@ -1,3 +1,0 @@
-# Copyright 2026 Scalizer (<https://www.scalizer.fr>)
-# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
-from .hooks import post_init_hook
