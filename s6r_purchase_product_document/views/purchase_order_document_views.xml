@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="purchase_order_document_view_list" model="ir.ui.view">
+        <field name="name">purchase.order.document.list</field>
+        <field name="model">purchase.order.document</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="order_id" column_invisible="True"/>
+                <field name="available_product_document_ids" column_invisible="True"/>
+                <field name="sequence" widget="handle"/>
+                <field name="product_document_id" options="{'no_create': True}"/>
+                <field name="product_name"/>
+                <field name="attached_on_purchase"/>
+                <field name="mimetype" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+</odoo>
