@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_document_form" model="ir.ui.view">
+        <field name="name">product.document.form.inherit.s6r_purchase_product_document</field>
+        <field name="model">product.document</field>
+        <field name="inherit_id" ref="product.product_document_form"/>
+        <field name="arch" type="xml">
+            <sheet position="inside">
+                <group name="purchase" string="Purchase" groups="purchase.group_purchase_user">
+                    <field name="attached_on_purchase" class="oe_inline" widget="selection"/>
+                </group>
+            </sheet>
+        </field>
+    </record>
+
+    <record id="product_document_kanban" model="ir.ui.view">
+        <field name="name">product.document.kanban.inherit.s6r_purchase_product_document</field>
+        <field name="model">product.document</field>
+        <field name="inherit_id" ref="product.product_document_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//main/field[@name='variant_attribute_value_ids']" position="after">
+                <div class="d-flex mt-2" groups="purchase.group_purchase_user">
+                    <span class="flex-shrink-0">Purchase</span>
+                    <field name="attached_on_purchase" class="ms-2" widget="selection"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_document_list" model="ir.ui.view">
+        <field name="name">product.document.list.inherit.s6r_purchase_product_document</field>
+        <field name="model">product.document</field>
+        <field name="inherit_id" ref="product.product_document_list"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="attached_on_purchase" optional="show" groups="purchase.group_purchase_user"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="product_document_search" model="ir.ui.view">
+        <field name="name">product.document.search.inherit.s6r_purchase_product_document</field>
+        <field name="model">product.document</field>
+        <field name="inherit_id" ref="product.product_document_search"/>
+        <field name="arch" type="xml">
+            <search position="inside">
+                <separator/>
+                <filter name="purchase_rfq"
+                    string="Visible on RFQ"
+                    domain="[('attached_on_purchase', 'in', ('rfq', 'rfq_purchase'))]"
+                    groups="purchase.group_purchase_user"/>
+                <filter name="purchase_order"
+                    string="Visible on PO"
+                    domain="[('attached_on_purchase', 'in', ('rfq_purchase', 'purchase'))]"
+                    groups="purchase.group_purchase_user"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

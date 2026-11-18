@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="mail_purchase_documents">
+        <t t-set="base_url" t-value="order.get_base_url()"/>
+        <div style="margin: 16px 0px; font-size: 13px;">
+            <p style="margin: 0px;">Documents regarding this order:</p>
+            <ul style="margin-bottom: 0px;">
+                <li t-foreach="bom_lines" t-as="bom_line">
+                    <a t-att-href="base_url + order.get_portal_url('/bom/%s' % bom_line.id)"
+                       t-out="bom_line.bom_id.display_name"/>
+                </li>
+                <li t-foreach="documents" t-as="document">
+                    <a t-att-href="base_url + order.get_portal_url('/document/%s' % document.id)"
+                       t-out="document.name"/>
+                </li>
+            </ul>
+        </div>
+    </template>
+
+</odoo>
