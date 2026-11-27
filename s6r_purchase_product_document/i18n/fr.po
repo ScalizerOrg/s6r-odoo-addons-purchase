@@ -1,0 +1,365 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s6r_purchase_product_document
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-18 11:08+0000\n"
+"PO-Revision-Date: 2026-11-18 11:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s6r_purchase_product_document
+#: model:ir.module.module,description:base.module_s6r_purchase_product_document
+msgid ""
+"\n"
+"Share product documents with vendors on RFQs and purchase orders:\n"
+"- visibility of each product document on RFQs and/or purchase orders;\n"
+"- selection of the documents to send on the purchase order;\n"
+"- PDF of the subcontracting bill of materials, frozen at confirmation;\n"
+"- PDF documents appended to the RFQ / purchase order report;\n"
+"- download links and zipped non-PDF documents in the email;\n"
+"- documents section on the vendor portal.\n"
+msgstr ""
+"\n"
+"Partage des documents produits avec les fournisseurs sur les demandes de prix et les bons de commande :\n"
+"- visibilité de chaque document produit sur les demandes de prix et/ou les bons de commande ;\n"
+"- sélection des documents à envoyer sur la commande d'achat ;\n"
+"- PDF de la nomenclature de sous-traitance, figé à la confirmation ;\n"
+"- documents PDF ajoutés à la suite du rapport de demande de prix / bon de commande ;\n"
+"- liens de téléchargement et documents non PDF zippés dans l'email ;\n"
+"- section documents sur le portail fournisseur.\n"
+
+#. module: s6r_purchase_product_document
+#: model:ir.actions.report,print_report_name:s6r_purchase_product_document.action_report_purchase_bom
+msgid "'BoM - %s' % object.display_name"
+msgstr "'Nomenclature - %s' % object.display_name"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.product_document_kanban
+msgid "<span class=\"flex-shrink-0\">Purchase</span>"
+msgstr "<span class=\"flex-shrink-0\">Achats</span>"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.report_purchase_bom_document
+msgid "<strong>Product:</strong>"
+msgstr "<strong>Article :</strong>"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.report_purchase_bom_document
+msgid "<strong>Quantity:</strong>"
+msgstr "<strong>Quantité :</strong>"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,help:s6r_purchase_product_document.field_product_document__attached_on_purchase
+#: model:ir.model.fields,help:s6r_purchase_product_document.field_purchase_order_document__attached_on_purchase
+msgid ""
+"Allows you to share the document with your vendors within a purchase.\n"
+"On RFQ only: available while the order is a request for quotation.\n"
+"On RFQ and PO: available at any time.\n"
+"On PO only: available once the order is confirmed."
+msgstr ""
+"Permet de partager le document avec vos fournisseurs dans un achat.\n"
+"Sur la RFQ uniquement : disponible tant que la commande est une demande de prix.\n"
+"Sur la RFQ et le BC : toujours disponible.\n"
+"Sur le BC uniquement : disponible une fois la commande confirmée."
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.res_config_settings_view_form_purchase
+msgid "Append the PDF documents shared with the vendor to these reports"
+msgstr ""
+"Ajouter les documents PDF partagés avec le fournisseur à la suite de ces "
+"rapports"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_line__available_bom_ids
+msgid "Available BoMs"
+msgstr "Nomenclatures disponibles"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order__available_product_document_ids
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__available_product_document_ids
+msgid "Available Documents"
+msgstr "Documents disponibles"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.report_purchase_bom_document
+msgid "Bill of Materials"
+msgstr "Nomenclature"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_line__bom_id
+msgid "BoM"
+msgstr "Nomenclature"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_res_company
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__company_id
+msgid "Company"
+msgstr "Entreprise"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.report_purchase_bom_document
+msgid "Component"
+msgstr "Composant"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_ir_actions_report__display_name
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_mail_compose_message__display_name
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_product_document__display_name
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__display_name
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_line__display_name
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_res_company__display_name
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__product_document_id
+msgid "Document"
+msgstr "Document"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order__document_count
+msgid "Document Count"
+msgstr "Nombre de documents"
+
+#. module: s6r_purchase_product_document
+#. odoo-python
+#: code:addons/s6r-odoo-addons-purchase/s6r_purchase_product_document/models/purchase_order.py:0
+#: code:addons/s6r_purchase_product_document/models/purchase_order.py:0
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order__document_ids
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.purchase_order_form
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.purchase_order_portal_content
+msgid "Documents"
+msgstr "Documents"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.mail_purchase_documents
+msgid "Documents regarding this order:"
+msgstr "Documents concernant cette commande :"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Assistant de composition d’e-mail"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_line__bom_attachment_id
+msgid "Frozen BoM PDF"
+msgstr "PDF de nomenclature figé"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields.selection,name:s6r_purchase_product_document.selection__product_document__attached_on_purchase__hidden
+msgid "Hidden"
+msgstr "Masqué"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_ir_actions_report__id
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_mail_compose_message__id
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_product_document__id
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order__id
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__id
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_line__id
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_res_company__id
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_line__is_subcontracted
+msgid "Is Subcontracted"
+msgstr "Est sous-traité"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__mimetype
+msgid "Mime Type"
+msgstr "Type MIME"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields.selection,name:s6r_purchase_product_document.selection__product_document__attached_on_purchase__purchase
+msgid "On PO only"
+msgstr "Sur le BC uniquement"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields.selection,name:s6r_purchase_product_document.selection__product_document__attached_on_purchase__rfq_purchase
+msgid "On RFQ and PO"
+msgstr "Sur la RFQ et le BC"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields.selection,name:s6r_purchase_product_document.selection__product_document__attached_on_purchase__rfq
+msgid "On RFQ only"
+msgstr "Sur la RFQ uniquement"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,help:s6r_purchase_product_document.field_purchase_order_line__bom_attachment_id
+msgid "PDF of the bill of materials generated at the order confirmation."
+msgstr "PDF de la nomenclature généré à la confirmation de la commande."
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.purchase_order_form
+msgid "Preview"
+msgstr "Aperçu"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__product_name
+msgid "Product"
+msgstr "Article"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_product_document
+msgid "Product Document"
+msgstr "Document du produit"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.res_config_settings_view_form_purchase
+msgid "Product Documents"
+msgstr "Documents produits"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.product_document_form
+msgid "Purchase"
+msgstr "Achats"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_purchase_order
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__order_id
+msgid "Purchase Order"
+msgstr "Bon de commande fournisseur"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_purchase_order_document
+msgid "Purchase Order Document"
+msgstr "Document de commande d'achat"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Ligne de bon de commande"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_product_document__attached_on_purchase
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__attached_on_purchase
+msgid "Purchase: Visible at"
+msgstr "Achats : visible sur"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.report_purchase_bom_document
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model,name:s6r_purchase_product_document.model_ir_actions_report
+msgid "Report Action"
+msgstr "Action de rapport"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,help:s6r_purchase_product_document.field_res_company__purchase_bom_report_id
+#: model:ir.model.fields,help:s6r_purchase_product_document.field_res_config_settings__purchase_bom_report_id
+msgid ""
+"Report used to generate the bill of materials sent to the subcontractors."
+msgstr ""
+"Rapport utilisé pour générer la nomenclature envoyée aux sous-traitants."
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_res_company__purchase_document_report_ids
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_res_config_settings__purchase_document_report_ids
+msgid "Reports Including Documents"
+msgstr "Rapports concernés"
+
+#. module: s6r_purchase_product_document
+#: model:ir.module.module,shortdesc:base.module_s6r_purchase_product_document
+msgid "Scalizer Purchase Product Document"
+msgstr "Scalizer Documents produits sur les achats"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_purchase_order_document__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: s6r_purchase_product_document
+#: model:ir.module.module,summary:base.module_s6r_purchase_product_document
+msgid ""
+"Share product documents and subcontracting BoMs with vendors on RFQs and "
+"purchase orders"
+msgstr ""
+"Partage des documents produits et des nomenclatures de sous-traitance avec "
+"les fournisseurs sur les demandes de prix et les bons de commande"
+
+#. module: s6r_purchase_product_document
+#: model:ir.actions.report,name:s6r_purchase_product_document.action_report_purchase_bom
+msgid "Subcontracting BoM"
+msgstr "Nomenclature de sous-traitance"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_res_company__purchase_bom_report_id
+#: model:ir.model.fields,field_description:s6r_purchase_product_document.field_res_config_settings__purchase_bom_report_id
+msgid "Subcontracting BoM Report"
+msgstr "Rapport de nomenclature de sous-traitance"
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,help:s6r_purchase_product_document.field_purchase_order_line__bom_id
+msgid "Subcontracting bill of materials sent to the vendor with the order."
+msgstr ""
+"Nomenclature de sous-traitance envoyée au fournisseur avec la commande."
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.fields,help:s6r_purchase_product_document.field_res_company__purchase_document_report_ids
+#: model:ir.model.fields,help:s6r_purchase_product_document.field_res_config_settings__purchase_document_report_ids
+msgid ""
+"The PDF documents shared with the vendor are appended to these reports."
+msgstr ""
+"Les documents PDF partagés avec le fournisseur sont ajoutés à la suite de "
+"ces rapports."
+
+#. module: s6r_purchase_product_document
+#: model:ir.model.constraint,message:s6r_purchase_product_document.constraint_purchase_order_document_unique_document
+msgid "This document is already selected on the purchase order."
+msgstr "Ce document est déjà sélectionné sur la commande d'achat."
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.report_purchase_bom_document
+msgid "Unit"
+msgstr "Unité"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.product_document_search
+msgid "Visible on PO"
+msgstr "Visible sur le BC"
+
+#. module: s6r_purchase_product_document
+#: model_terms:ir.ui.view,arch_db:s6r_purchase_product_document.product_document_search
+msgid "Visible on RFQ"
+msgstr "Visible sur la RFQ"

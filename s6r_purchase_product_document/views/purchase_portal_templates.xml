@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="purchase_order_portal_content" inherit_id="purchase.purchase_order_portal_content">
+        <xpath expr="//section[@id='details']" position="before">
+            <section t-if="purchase_documents or purchase_bom_lines" id="purchase_documents" class="mt-4 mb-4">
+                <h3>Documents</h3>
+                <div class="d-flex flex-wrap gap-2">
+                    <t t-foreach="purchase_bom_lines" t-as="bom_line">
+                        <div class="bg-light p-2 rounded">
+                            <a t-att-href="order.get_portal_url('/bom/%s' % bom_line.id)" class="d-flex gap-2">
+                                <div class="o_image" data-mimetype="application/pdf"/>
+                                <div class="align-self-center small" t-out="bom_line.bom_id.display_name"/>
+                            </a>
+                        </div>
+                    </t>
+                    <t t-foreach="purchase_documents" t-as="document_sudo">
+                        <t t-set="attachment_sudo" t-value="document_sudo.ir_attachment_id"/>
+                        <div class="bg-light p-2 rounded">
+                            <a t-att-href="order.get_portal_url('/document/%s' % document_sudo.id)"
+                               t-att-target="attachment_sudo.type == 'url' and '_blank' or '_self'"
+                               class="d-flex gap-2">
+                                <div class="o_image"
+                                     t-att-title="attachment_sudo.name"
+                                     t-att-data-mimetype="attachment_sudo.mimetype"/>
+                                <div class="align-self-center small" t-out="attachment_sudo.name"/>
+                            </a>
+                        </div>
+                    </t>
+                </div>
+            </section>
+        </xpath>
+    </template>
+
+</odoo>
